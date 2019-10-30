@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void)
+{
+	FILE *fp;
+	char senten[1000];
+	fp = fopen("file.txt", "w");
+	if (fp == NULL)
+	{
+		fprintf(stderr, "fail\n");
+		exit(0);
+	}
+	do
+	{
+		gets(senten);
+		fputs(senten, fp);
+	} while (strlen(senten) != 0);
+	fclose(fp);
+
+	return 0;
+}
+ 
